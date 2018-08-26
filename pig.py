@@ -13,6 +13,14 @@
 
 def translate(word):
 	vowels = ["a", "e", "i", "o", "u"]
-	return word
+	new_word = []
+	for i in word:
+		if i not in vowels:
+			new_word.append(i)
+		else:
+			break
+	return new_word
 
 print(translate("falon"))
+print(translate("great"))
+
