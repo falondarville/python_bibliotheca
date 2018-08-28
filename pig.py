@@ -11,16 +11,38 @@
 # Phase 1
 # Your first task is to produce a function that takes one argument, a word, and returns the portion of the word up to, but not including the first vowel. For example, if you sent 'banana' to your function, it should return 'b'. Sending 'Sibley' should return 'S', 'stream' should return 'str', and 'break' should return 'br'. Print out your working function and a sample run.
 
-def translate(word):
+# def translate(word):
+# 	vowels = ["a", "e", "i", "o", "u"]
+# 	new_word = []
+# 	for i in word:
+# 		if i not in vowels:
+# 			new_word.append(i)
+# 		else:
+# 			break
+# 	return new_word
+
+# print(translate("falon"))
+# print(translate("great"))
+
+# Phase 2
+# Using what you learned from Phase 1, write a function (or functions) that takes a single word as an argument and returns the word with the prefix and stem reversed.
+
+def reverse(word):
 	vowels = ["a", "e", "i", "o", "u"]
-	new_word = []
+	prefix = []
+	global prefix_len, stem
 	for i in word:
 		if i not in vowels:
-			new_word.append(i)
+			prefix.append(i)
+			prefix_len = len(prefix)
+			return ''.join(prefix)
 		else:
+			stem = word[0:prefix_len]
+			print("This is the stem: " + stem)
 			break
-	return new_word
 
-print(translate("falon"))
-print(translate("great"))
+print(reverse("falon"))
+
+
+
 
